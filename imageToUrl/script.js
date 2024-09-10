@@ -6,12 +6,13 @@ const caption=document.querySelector('.caption');
 fileInput.addEventListener('change', (event) => {
     // Get the selected image file
     const imageFile = event.target.files[0];
+    console.log("image file is "+imageFile)
 
     if (imageFile) {
         const reader = new FileReader();
 
         // Convert the image file to a string
-        reader.readAsDataURL(imageFile);
+        reader.readAsArrayBuffer(imageFile);
 
         // FileReader will emit the load event when the data URL is ready
         // Access the string using result property inside the callback function
